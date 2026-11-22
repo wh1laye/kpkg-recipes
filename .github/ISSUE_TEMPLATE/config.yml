@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/wh1laye/Kryonux/security/advisories/new
+    about: Do not report vulnerabilities in a public issue. Use a private advisory instead.
+  - name: Questions
+    url: https://wh1laye.github.io/Kryonux/forum/
+    about: Ask questions and join the discussion on the forum.

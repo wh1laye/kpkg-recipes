@@ -1,0 +1,24 @@
+name: Recipe problem or request
+description: Report a recipe that fails to build or request a new package.
+labels: [recipe]
+body:
+  - type: input
+    id: pkg
+    attributes:
+      label: Package
+      description: Use the form category/name, for example libs/json-c.
+    validations:
+      required: true
+  - type: input
+    id: kpkg
+    attributes:
+      label: kpkg version
+      placeholder: "0.0.1"
+  - type: textarea
+    id: out
+    attributes:
+      label: What happened
+      description: Paste the command you ran and the full output, or describe the package you want added.
+      render: shell
+    validations:
+      required: true

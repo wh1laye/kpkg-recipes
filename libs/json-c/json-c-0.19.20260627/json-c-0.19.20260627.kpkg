@@ -1,0 +1,18 @@
+PACKAGE=json-c
+VERSION=0.19.20260627
+DESCRIPTION="JSON implementation in C"
+HOMEPAGE="https://github.com/json-c/json-c"
+LICENSE="MIT"
+SRC_URI="https://github.com/json-c/json-c/archive/refs/tags/json-c-0.19-20260627.tar.gz -> json-c-0.19-20260627.tar.gz"
+SHA256="f17a6d7d265cf840dfd8f0f46a606d98c6b5b26dc7cfe27275d1546a213086c8"
+DEPEND="toolchain/gcc toolchain/make"
+RDEPEND="system/glibc"
+BUILD_FLAGS="-DBUILD_STATIC_LIBS=OFF -DBUILD_TESTING=OFF"
+
+build() {
+  cmake --build build -j"${JOBS:-$(nproc)}"
+}
+
+install() {
+  DESTDIR="$DESTDIR" cmake --install build
+}

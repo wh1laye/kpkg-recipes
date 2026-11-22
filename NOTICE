@@ -1,0 +1,17 @@
+Kryonux Package Recipes
+Copyright (C) 2026 The Kryonux Project
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+Each recipe describes how to build third party software. The software itself
+is not part of this repository and keeps its own license, named in the
+LICENSE field of the recipe.
+
+TRADEMARK & BRAND NOTICE (GPLv3 Section 7):
+The names "Kryonux", "kryonk", "kpkg" and the official Kryonux crystal
+logo are identifiers of The Kryonux Project. Any modified forks or
+unofficial copies of this repository redistributed publicly must use a
+different name and logo so as not to imply endorsement by The Kryonux Project.
