@@ -1,0 +1,8 @@
+PACKAGE=readline
+VERSION=8.2
+DESCRIPTION="Line editing library"
+LICENSE="GPL-3.0-or-later"
+SRC_URI="https://ftp.gnu.org/gnu/readline/readline-8.2.tar.gz"
+DEPEND="system/ncurses"
+RDEPEND="system/ncurses"
+BUILD_FLAGS="--with-curses --disable-static"

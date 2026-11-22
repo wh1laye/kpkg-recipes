@@ -1,0 +1,20 @@
+name: recipes
+on:
+  push:
+    branches: [master]
+  pull_request:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: wh1laye/Kryonux
+          path: kryonux
+      - name: Build kpkg
+        run: make -C kryonux/kpkg
+      - name: Test kpkg
+        run: bash kryonux/tools/test-kpkg.sh kryonux/kpkg
+      - name: Check recipes
+        run: KPKG="$PWD/kryonux/kpkg/kpkg" bash tools/test-recipes.sh

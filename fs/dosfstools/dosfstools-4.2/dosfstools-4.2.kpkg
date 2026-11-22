@@ -1,0 +1,7 @@
+PACKAGE=dosfstools
+VERSION=4.2
+DESCRIPTION="FAT filesystem tools"
+LICENSE="GPL-3.0-or-later"
+SRC_URI="https://github.com/dosfstools/dosfstools/releases/download/v4.2/dosfstools-4.2.tar.gz"
+RDEPEND="system/glibc"
+BUILD_FLAGS="--enable-compat-symlinks"

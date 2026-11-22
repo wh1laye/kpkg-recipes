@@ -1,0 +1,6 @@
+PACKAGE=findutils
+VERSION=4.10.0
+DESCRIPTION="GNU find tools"
+LICENSE="GPL-3.0-or-later"
+SRC_URI="https://ftp.gnu.org/gnu/findutils/findutils-4.10.0.tar.xz"
+RDEPEND="system/glibc"

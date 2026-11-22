@@ -1,0 +1,6 @@
+PACKAGE=patch
+VERSION=2.7.6
+DESCRIPTION="Apply diff files to originals"
+LICENSE="GPL-3.0-or-later"
+SRC_URI="https://ftp.gnu.org/gnu/patch/patch-2.7.6.tar.xz"
+RDEPEND="system/glibc"

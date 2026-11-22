@@ -1,0 +1,7 @@
+PACKAGE=e2fsprogs
+VERSION=1.47.0
+DESCRIPTION="ext2, ext3 and ext4 tools"
+LICENSE="GPL-2.0-or-later"
+SRC_URI="https://mirrors.edge.kernel.org/pub/linux/kernel/people/tytso/e2fsprogs/v1.47.0/e2fsprogs-1.47.0.tar.xz"
+RDEPEND="system/glibc"
+BUILD_FLAGS="--sysconfdir=/etc --enable-elf-shlibs --disable-libblkid --disable-libuuid --disable-uuidd --disable-fsck"

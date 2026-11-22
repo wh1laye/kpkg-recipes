@@ -12,8 +12,8 @@ The official recipe tree for `kpkg`, the package manager of Kryonux (`wh1laye/Kr
 2. Place the file at `category/name/name-version/name-version.kpkg`
 3. Fill `PACKAGE`, `VERSION`, `DESCRIPTION`, `LICENSE`, `SRC_URI`, `SHA256`. Add `DEPEND` and `RDEPEND` with `category/name` tokens that exist in this tree or in the Kryonux base
 4. Use the default configure and build steps when the project is plain autotools, CMake or Meson. Write `configure`, `build` or `install` only when the defaults are not enough
-5. Verify the SHA-256 against the real archive. Never invent a checksum or a URL. If you cannot download the source, say so instead of guessing
-6. Run `kpkg lint` on the file and fix every message
+5. Get the SHA-256 with `kpkg checksum file.kpkg`, which downloads the real archive. Never invent a checksum or a URL. If you cannot download the source, leave `SHA256` out and say so; the `fill-checksums` workflow writes it later
+6. Run `kpkg lint` and `bash tools/test-recipes.sh` and fix every message
 7. Add an entry to `CHANGELOG.md`
 
 ## Rules

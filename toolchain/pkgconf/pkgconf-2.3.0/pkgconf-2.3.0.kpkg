@@ -1,0 +1,11 @@
+PACKAGE=pkgconf
+VERSION=2.3.0
+DESCRIPTION="Compiler and linker flag helper"
+LICENSE="ISC"
+SRC_URI="https://distfiles.ariadne.space/pkgconf/pkgconf-2.3.0.tar.xz"
+RDEPEND="system/glibc"
+
+install() {
+  make DESTDIR="$DESTDIR" install
+  ln -sf pkgconf "$DESTDIR/usr/bin/pkg-config"
+}

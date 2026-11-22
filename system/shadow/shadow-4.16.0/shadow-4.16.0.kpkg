@@ -1,0 +1,8 @@
+PACKAGE=shadow
+VERSION=4.16.0
+DESCRIPTION="Login and account tools"
+LICENSE="BSD-3-Clause"
+SRC_URI="https://github.com/shadow-maint/shadow/releases/download/4.16.0/shadow-4.16.0.tar.xz"
+DEPEND="system/libxcrypt"
+RDEPEND="system/libxcrypt"
+BUILD_FLAGS="--sysconfdir=/etc --disable-static --with-libxcrypt --without-libbsd"

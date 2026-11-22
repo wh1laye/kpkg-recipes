@@ -1,0 +1,18 @@
+PACKAGE=iproute2
+VERSION=6.11.0
+DESCRIPTION="IP routing tools"
+LICENSE="GPL-2.0-only"
+SRC_URI="https://www.kernel.org/pub/linux/utils/net/iproute2/iproute2-6.11.0.tar.xz"
+RDEPEND="system/glibc"
+
+configure() {
+  ./configure
+}
+
+build() {
+  make -j"${JOBS:-$(nproc)}"
+}
+
+install() {
+  make DESTDIR="$DESTDIR" SBINDIR=/usr/sbin install
+}

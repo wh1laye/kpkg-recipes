@@ -1,0 +1,8 @@
+PACKAGE=mpfr
+VERSION=4.2.1
+DESCRIPTION="Multiple precision floating point library"
+LICENSE="LGPL-3.0-or-later"
+SRC_URI="https://ftp.gnu.org/gnu/mpfr/mpfr-4.2.1.tar.xz"
+DEPEND="libs/gmp"
+RDEPEND="libs/gmp"
+BUILD_FLAGS="--disable-static --enable-thread-safe"

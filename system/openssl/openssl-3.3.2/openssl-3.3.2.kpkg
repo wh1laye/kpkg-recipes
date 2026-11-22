@@ -1,0 +1,19 @@
+PACKAGE=openssl
+VERSION=3.3.2
+DESCRIPTION="TLS and cryptography toolkit"
+LICENSE="Apache-2.0"
+SRC_URI="https://github.com/openssl/openssl/releases/download/openssl-3.3.2/openssl-3.3.2.tar.gz"
+DEPEND="system/zlib"
+RDEPEND="system/zlib system/glibc"
+
+configure() {
+  ./config --prefix=/usr --openssldir=/etc/ssl --libdir=lib shared zlib-dynamic
+}
+
+build() {
+  make -j"${JOBS:-$(nproc)}"
+}
+
+install() {
+  make DESTDIR="$DESTDIR" install_sw install_ssldirs
+}

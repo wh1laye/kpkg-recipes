@@ -1,0 +1,8 @@
+PACKAGE=nano
+VERSION=8.0
+DESCRIPTION="GNU nano editor"
+LICENSE="GPL-3.0-or-later"
+SRC_URI="https://www.nano-editor.org/dist/v8/nano-8.0.tar.xz"
+DEPEND="system/ncurses"
+RDEPEND="system/ncurses"
+BUILD_FLAGS="--sysconfdir=/etc --enable-utf8"

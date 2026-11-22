@@ -53,6 +53,8 @@ Available variables: `DESTDIR`, `JOBS`, `BUILD_FLAGS`. The old names `src_prepar
 
 ## 🔐 Getting the checksum
 
+Let `kpkg` do it: `kpkg checksum path/to/name-version.kpkg` downloads every source and writes the `SHA256` field. By hand:
+
 ```sh
 curl -fLO https://example.org/name-1.0.tar.gz
 sha256sum name-1.0.tar.gz
@@ -64,6 +66,6 @@ Always hash the exact file the `SRC_URI` downloads, after any rename.
 
 1. Create the directory and file as shown above
 2. Fill every required field
-3. Run `kpkg lint path/to/name-version.kpkg` and fix every message
+3. Run `kpkg checksum` and `kpkg lint` on the file and fix every message; then run `KPKG=kpkg bash tools/test-recipes.sh`
 4. Run `doas kpkg install ./path/to/name-version.kpkg` on a Kryonux system and confirm it builds
 5. Add a line to `CHANGELOG.md`

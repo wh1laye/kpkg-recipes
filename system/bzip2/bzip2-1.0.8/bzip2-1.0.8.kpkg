@@ -1,0 +1,22 @@
+PACKAGE=bzip2
+VERSION=1.0.8
+DESCRIPTION="Block sorting compressor"
+LICENSE="bzip2-1.0.6"
+SRC_URI="https://sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz"
+RDEPEND="system/glibc"
+
+configure() {
+  true
+}
+
+build() {
+  make -f Makefile-libbz2_so
+  make clean
+  make
+}
+
+install() {
+  make PREFIX="$DESTDIR/usr" install
+  cp -a libbz2.so.* "$DESTDIR/usr/lib/"
+  ln -sf libbz2.so.1.0 "$DESTDIR/usr/lib/libbz2.so"
+}

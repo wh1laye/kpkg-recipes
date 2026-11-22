@@ -1,0 +1,28 @@
+name: fill-checksums
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  fill:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: wh1laye/Kryonux
+          path: kryonux
+      - name: Build kpkg
+        run: make -C kryonux/kpkg
+      - name: Download sources and write SHA256
+        run: |
+          files=$(grep -L '^SHA256=' $(find . -name '*.kpkg' -not -path './kryonux/*' | sort) || true)
+          [ -n "$files" ] || { echo "every recipe already has a checksum"; exit 0; }
+          ./kryonux/kpkg/kpkg checksum $files
+      - name: Commit
+        run: |
+          git config user.name "The Kryonux Project"
+          git config user.email "actions@users.noreply.github.com"
+          git add -- '*.kpkg'
+          git diff --cached --quiet || git commit -m "Fill SHA256 checksums"
+          git push

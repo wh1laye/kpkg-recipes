@@ -1,0 +1,8 @@
+PACKAGE=bash
+VERSION=5.2.37
+DESCRIPTION="GNU Bourne Again shell"
+LICENSE="GPL-3.0-or-later"
+SRC_URI="https://ftp.gnu.org/gnu/bash/bash-5.2.37.tar.gz"
+DEPEND="system/readline system/ncurses"
+RDEPEND="system/readline system/ncurses"
+BUILD_FLAGS="--without-bash-malloc --with-installed-readline"

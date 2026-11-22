@@ -1,0 +1,6 @@
+PACKAGE=gawk
+VERSION=5.3.0
+DESCRIPTION="GNU awk"
+LICENSE="GPL-3.0-or-later"
+SRC_URI="https://ftp.gnu.org/gnu/gawk/gawk-5.3.0.tar.xz"
+RDEPEND="system/glibc"

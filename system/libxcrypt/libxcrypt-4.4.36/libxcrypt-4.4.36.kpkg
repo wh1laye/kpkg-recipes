@@ -1,0 +1,7 @@
+PACKAGE=libxcrypt
+VERSION=4.4.36
+DESCRIPTION="Password hashing library"
+LICENSE="LGPL-2.1-or-later"
+SRC_URI="https://github.com/besser82/libxcrypt/releases/download/v4.4.36/libxcrypt-4.4.36.tar.xz"
+RDEPEND="system/glibc"
+BUILD_FLAGS="--disable-static --disable-failure-tokens"
