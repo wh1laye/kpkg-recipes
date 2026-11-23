@@ -1,0 +1,6 @@
+PACKAGE=cpio
+VERSION=2.15
+DESCRIPTION="Archive tool for cpio and initramfs files"
+LICENSE="GPL-3.0-or-later"
+SRC_URI="https://ftpmirror.gnu.org/gnu/cpio/cpio-2.15.tar.bz2"
+RDEPEND="system/glibc"

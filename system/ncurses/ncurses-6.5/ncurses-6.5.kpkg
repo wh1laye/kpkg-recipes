@@ -2,6 +2,6 @@ PACKAGE=ncurses
 VERSION=6.5
 DESCRIPTION="Terminal handling library"
 LICENSE="X11"
-SRC_URI="https://ftp.gnu.org/gnu/ncurses/ncurses-6.5.tar.gz"
+SRC_URI="https://ftpmirror.gnu.org/gnu/ncurses/ncurses-6.5.tar.gz"
 RDEPEND="system/glibc"
 BUILD_FLAGS="--with-shared --without-debug --without-normal --enable-pc-files --with-pkg-config-libdir=/usr/lib/pkgconfig --enable-widec --with-cxx-binding=no"

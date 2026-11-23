@@ -1,0 +1,8 @@
+PACKAGE=cryptsetup
+VERSION=2.7.5
+DESCRIPTION="Disk encryption with LUKS2"
+LICENSE="GPL-2.0-or-later"
+SRC_URI="https://www.kernel.org/pub/linux/utils/cryptsetup/v2.7/cryptsetup-2.7.5.tar.xz"
+DEPEND="libs/json-c libs/popt system/lvm2 system/openssl system/util-linux toolchain/pkgconf"
+RDEPEND="libs/json-c libs/popt system/lvm2 system/openssl system/util-linux"
+BUILD_FLAGS="--disable-ssh-token --disable-asciidoc --with-crypto_backend=openssl --disable-static"

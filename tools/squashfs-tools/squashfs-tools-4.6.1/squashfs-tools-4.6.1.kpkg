@@ -1,0 +1,19 @@
+PACKAGE=squashfs-tools
+VERSION=4.6.1
+DESCRIPTION="Tools to create and extract squashfs images"
+LICENSE="GPL-2.0-or-later"
+SRC_URI="https://github.com/plougher/squashfs-tools/releases/download/4.6.1/squashfs-tools-4.6.1.tar.gz"
+DEPEND="libs/zstd system/xz-utils system/zlib"
+RDEPEND="libs/zstd system/xz-utils system/zlib"
+
+configure() {
+  true
+}
+
+build() {
+  make -C squashfs-tools XZ_SUPPORT=1 ZSTD_SUPPORT=1 GZIP_SUPPORT=1 -j"${JOBS:-$(nproc)}"
+}
+
+install() {
+  make -C squashfs-tools INSTALL_PREFIX="$DESTDIR/usr" install
+}

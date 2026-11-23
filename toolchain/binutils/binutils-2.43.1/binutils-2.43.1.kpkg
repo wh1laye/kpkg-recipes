@@ -2,7 +2,7 @@ PACKAGE=binutils
 VERSION=2.43.1
 DESCRIPTION="GNU binary utilities"
 LICENSE="GPL-3.0-or-later"
-SRC_URI="https://ftp.gnu.org/gnu/binutils/binutils-2.43.1.tar.xz"
+SRC_URI="https://ftpmirror.gnu.org/gnu/binutils/binutils-2.43.1.tar.xz"
 DEPEND="system/zlib"
 RDEPEND="system/zlib"
 

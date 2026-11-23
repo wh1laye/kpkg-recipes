@@ -2,5 +2,5 @@ PACKAGE=diffutils
 VERSION=3.10
 DESCRIPTION="GNU diff tools"
 LICENSE="GPL-3.0-or-later"
-SRC_URI="https://ftp.gnu.org/gnu/diffutils/diffutils-3.10.tar.xz"
+SRC_URI="https://ftpmirror.gnu.org/gnu/diffutils/diffutils-3.10.tar.xz"
 RDEPEND="system/glibc"

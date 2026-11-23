@@ -2,5 +2,5 @@ PACKAGE=grep
 VERSION=3.11
 DESCRIPTION="GNU grep"
 LICENSE="GPL-3.0-or-later"
-SRC_URI="https://ftp.gnu.org/gnu/grep/grep-3.11.tar.xz"
+SRC_URI="https://ftpmirror.gnu.org/gnu/grep/grep-3.11.tar.xz"
 RDEPEND="system/glibc"

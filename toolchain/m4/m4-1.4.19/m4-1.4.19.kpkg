@@ -2,5 +2,5 @@ PACKAGE=m4
 VERSION=1.4.19
 DESCRIPTION="GNU macro processor"
 LICENSE="GPL-3.0-or-later"
-SRC_URI="https://ftp.gnu.org/gnu/m4/m4-1.4.19.tar.xz"
+SRC_URI="https://ftpmirror.gnu.org/gnu/m4/m4-1.4.19.tar.xz"
 RDEPEND="system/glibc"

@@ -1,0 +1,19 @@
+PACKAGE=lvm2
+VERSION=2.03.28
+DESCRIPTION="Device mapper library and tools"
+LICENSE="GPL-2.0-only AND LGPL-2.1-only"
+SRC_URI="https://sourceware.org/pub/lvm2/LVM2.2.03.28.tgz"
+DEPEND="toolchain/pkgconf system/util-linux"
+RDEPEND="system/util-linux"
+
+configure() {
+  ./configure --prefix=/usr --disable-selinux --enable-pkgconfig --disable-udev_sync
+}
+
+build() {
+  make device-mapper -j"${JOBS:-$(nproc)}"
+}
+
+install() {
+  make DESTDIR="$DESTDIR" install_device-mapper
+}

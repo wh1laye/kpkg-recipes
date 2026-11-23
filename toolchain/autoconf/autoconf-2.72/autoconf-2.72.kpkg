@@ -2,6 +2,6 @@ PACKAGE=autoconf
 VERSION=2.72
 DESCRIPTION="Generates configure scripts"
 LICENSE="GPL-3.0-or-later"
-SRC_URI="https://ftp.gnu.org/gnu/autoconf/autoconf-2.72.tar.xz"
+SRC_URI="https://ftpmirror.gnu.org/gnu/autoconf/autoconf-2.72.tar.xz"
 DEPEND="toolchain/m4"
 RDEPEND="toolchain/m4"

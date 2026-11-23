@@ -15,6 +15,6 @@ jobs:
       - name: Build kpkg
         run: make -C kryonux/kpkg
       - name: Test kpkg
-        run: bash kryonux/tools/test-kpkg.sh kryonux/kpkg
+        run: sudo env "PATH=$PATH" bash kryonux/tools/test-kpkg.sh kryonux/kpkg
       - name: Check recipes
         run: KRYONUX_DIR="$PWD/kryonux" KPKG="$PWD/kryonux/kpkg/kpkg" bash tools/test-recipes.sh

@@ -1,0 +1,7 @@
+PACKAGE=psmisc
+VERSION=23.7
+DESCRIPTION="Process tools: killall, fuser, pstree"
+LICENSE="GPL-2.0-or-later"
+SRC_URI="https://sourceforge.net/projects/psmisc/files/psmisc/psmisc-23.7.tar.xz"
+DEPEND="system/ncurses"
+RDEPEND="system/ncurses"

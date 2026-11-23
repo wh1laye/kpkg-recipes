@@ -2,7 +2,7 @@ PACKAGE=glibc
 VERSION=2.40
 DESCRIPTION="GNU C library"
 LICENSE="LGPL-2.1-or-later"
-SRC_URI="https://ftp.gnu.org/gnu/glibc/glibc-2.40.tar.xz"
+SRC_URI="https://ftpmirror.gnu.org/gnu/glibc/glibc-2.40.tar.xz"
 DEPEND="system/linux-headers"
 
 configure() {

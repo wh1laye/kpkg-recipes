@@ -1,0 +1,7 @@
+PACKAGE=popt
+VERSION=1.19
+DESCRIPTION="Command line option parsing library"
+LICENSE="MIT"
+SRC_URI="http://ftp.rpm.org/popt/releases/popt-1.x/popt-1.19.tar.gz"
+RDEPEND="system/glibc"
+BUILD_FLAGS="--disable-static"

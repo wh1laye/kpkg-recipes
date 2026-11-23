@@ -2,7 +2,7 @@ PACKAGE=coreutils
 VERSION=9.5
 DESCRIPTION="GNU core utilities"
 LICENSE="GPL-3.0-or-later"
-SRC_URI="https://ftp.gnu.org/gnu/coreutils/coreutils-9.5.tar.xz"
+SRC_URI="https://ftpmirror.gnu.org/gnu/coreutils/coreutils-9.5.tar.xz"
 RDEPEND="system/glibc"
 
 configure() {

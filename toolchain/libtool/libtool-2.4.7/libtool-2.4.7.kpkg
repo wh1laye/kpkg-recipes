@@ -2,5 +2,5 @@ PACKAGE=libtool
 VERSION=2.4.7
 DESCRIPTION="Generic library support script"
 LICENSE="GPL-2.0-or-later"
-SRC_URI="https://ftp.gnu.org/gnu/libtool/libtool-2.4.7.tar.xz"
+SRC_URI="https://ftpmirror.gnu.org/gnu/libtool/libtool-2.4.7.tar.xz"
 RDEPEND="system/glibc"

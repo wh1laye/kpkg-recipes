@@ -2,7 +2,7 @@ PACKAGE=gcc
 VERSION=14.2.0
 DESCRIPTION="GNU compiler collection"
 LICENSE="GPL-3.0-or-later"
-SRC_URI="https://ftp.gnu.org/gnu/gcc/gcc-14.2.0/gcc-14.2.0.tar.xz"
+SRC_URI="https://ftpmirror.gnu.org/gnu/gcc/gcc-14.2.0/gcc-14.2.0.tar.xz"
 DEPEND="libs/gmp libs/mpfr libs/mpc system/zlib toolchain/binutils"
 RDEPEND="toolchain/binutils libs/gmp libs/mpfr libs/mpc system/zlib"
 

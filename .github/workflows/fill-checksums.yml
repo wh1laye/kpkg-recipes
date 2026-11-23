@@ -18,8 +18,9 @@ jobs:
         run: |
           files=$(grep -L '^SHA256=' $(find . -name '*.kpkg' -not -path './kryonux/*' | sort) || true)
           [ -n "$files" ] || { echo "every recipe already has a checksum"; exit 0; }
-          ./kryonux/kpkg/kpkg checksum $files
+          ./kryonux/kpkg/kpkg checksum $files || echo "::warning::some sources could not be downloaded, see the log"
       - name: Commit
+        if: always()
         run: |
           git config user.name "The Kryonux Project"
           git config user.email "actions@users.noreply.github.com"

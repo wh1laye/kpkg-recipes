@@ -43,6 +43,13 @@ while IFS= read -r f; do
   done
 done < <(find "$REPO" -name '*.kpkg' -not -path '*/.git/*' | sort)
 
+if [ -e "$REPO/.gitmodules" ]; then err ".gitmodules" "a leftover from the old repository, remove it"; fi
+for old in $(grep -rIil -E 'cloud(pkg|os)' "$REPO" --exclude-dir=.git --exclude=CHANGELOG.md --exclude=test-recipes.sh 2>/dev/null || true); do err "${old#"$REPO"/}" "contains an old CloudPkg or CloudOS name, remove the file or rename it"; done
+for wf in "$REPO"/.github/workflows/*.yml; do
+  [ -f "$wf" ] || continue
+  case $(basename "$wf") in recipes.yml|fill-checksums.yml) ;; *) err "${wf#"$REPO"/}" "unknown workflow, only recipes.yml and fill-checksums.yml belong here" ;; esac
+done
+
 if [ -n "${KRYONUX_DIR:-}" ] && [ -f "$KRYONUX_DIR/tools/stage3/kryonux-packages.list" ]; then
   while IFS= read -r p; do
     [ -n "$p" ] || continue

@@ -2,7 +2,7 @@ PACKAGE=tar
 VERSION=1.35
 DESCRIPTION="GNU tar"
 LICENSE="GPL-3.0-or-later"
-SRC_URI="https://ftp.gnu.org/gnu/tar/tar-1.35.tar.xz"
+SRC_URI="https://ftpmirror.gnu.org/gnu/tar/tar-1.35.tar.xz"
 RDEPEND="system/glibc"
 
 configure() {
