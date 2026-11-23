@@ -3,6 +3,7 @@ VERSION=6.8.2
 DESCRIPTION="Minimal privilege escalation tool"
 LICENSE="ISC"
 SRC_URI="https://github.com/Duncaen/OpenDoas/releases/download/v6.8.2/opendoas-6.8.2.tar.gz"
+SHA256="28dca29adec5f4336465812d9e2243f599e62a78903de71c24f0cd6fe667edac"
 DEPEND="toolchain/bison"
 RDEPEND="system/glibc"
 

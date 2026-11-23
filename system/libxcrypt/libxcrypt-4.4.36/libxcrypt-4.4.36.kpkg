@@ -3,5 +3,6 @@ VERSION=4.4.36
 DESCRIPTION="Password hashing library"
 LICENSE="LGPL-2.1-or-later"
 SRC_URI="https://github.com/besser82/libxcrypt/releases/download/v4.4.36/libxcrypt-4.4.36.tar.xz"
+SHA256="e5e1f4caee0a01de2aee26e3138807d6d3ca2b8e67287966d1fefd65e1fd8943"
 RDEPEND="system/glibc"
 BUILD_FLAGS="--disable-static --disable-failure-tokens"

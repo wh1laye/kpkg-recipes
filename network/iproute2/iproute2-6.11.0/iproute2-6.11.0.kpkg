@@ -3,6 +3,7 @@ VERSION=6.11.0
 DESCRIPTION="IP routing tools"
 LICENSE="GPL-2.0-only"
 SRC_URI="https://www.kernel.org/pub/linux/utils/net/iproute2/iproute2-6.11.0.tar.xz"
+SHA256="1f795398a04aeaacd06a8f6ace2cfd913c33fa5953ca99daae83bb5c534611c3"
 RDEPEND="system/glibc"
 
 configure() {

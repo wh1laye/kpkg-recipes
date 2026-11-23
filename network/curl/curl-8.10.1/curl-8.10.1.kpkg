@@ -3,6 +3,7 @@ VERSION=8.10.1
 DESCRIPTION="URL transfer tool and library"
 LICENSE="curl"
 SRC_URI="https://curl.se/download/curl-8.10.1.tar.xz"
+SHA256="73a4b0e99596a09fa5924a4fb7e4b995a85fda0d18a2c02ab9cf134bebce04ee"
 DEPEND="system/openssl system/zlib"
 RDEPEND="system/openssl system/zlib"
 BUILD_FLAGS="--with-openssl --disable-static --without-libpsl --with-ca-path=/etc/ssl/certs"

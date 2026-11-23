@@ -3,6 +3,7 @@ VERSION=6.18.64
 DESCRIPTION="Linux kernel headers"
 LICENSE="GPL-2.0-only WITH Linux-syscall-note"
 SRC_URI="https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.18.64.tar.xz"
+SHA256="020d45510c539972e6f14c5c71566878d3b7ef56fb082b3e09134f2ebaade562"
 
 configure() {
   true

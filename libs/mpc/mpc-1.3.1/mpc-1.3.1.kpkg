@@ -3,6 +3,7 @@ VERSION=1.3.1
 DESCRIPTION="Complex number arithmetic library"
 LICENSE="LGPL-3.0-or-later"
 SRC_URI="https://ftpmirror.gnu.org/gnu/mpc/mpc-1.3.1.tar.gz"
+SHA256="ab642492f5cf882b74aa0cb730cd410a81edcdbec895183ce930e706c1c759b8"
 DEPEND="libs/gmp libs/mpfr"
 RDEPEND="libs/gmp libs/mpfr"
 BUILD_FLAGS="--disable-static"

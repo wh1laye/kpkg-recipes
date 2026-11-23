@@ -3,6 +3,7 @@ VERSION=4.0.4
 DESCRIPTION="Process tools: ps, top, free"
 LICENSE="GPL-2.0-or-later AND LGPL-2.1-or-later"
 SRC_URI="https://sourceforge.net/projects/procps-ng/files/Production/procps-ng-4.0.4.tar.xz"
+SHA256="22870d6feb2478adb617ce4f09a787addaf2d260c5a8aa7b17d889a962c5e42e"
 DEPEND="system/ncurses"
 RDEPEND="system/ncurses"
 BUILD_FLAGS="--disable-static --disable-kill --without-systemd"

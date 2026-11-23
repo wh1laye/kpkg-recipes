@@ -3,4 +3,5 @@ VERSION=1.13
 DESCRIPTION="GNU gzip"
 LICENSE="GPL-3.0-or-later"
 SRC_URI="https://ftpmirror.gnu.org/gnu/gzip/gzip-1.13.tar.xz"
+SHA256="7454eb6935db17c6655576c2e1b0fabefd38b4d0936e0f87f48cd062ce91a057"
 RDEPEND="system/glibc"

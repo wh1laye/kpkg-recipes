@@ -3,6 +3,7 @@ VERSION=9.9p1
 DESCRIPTION="OpenSSH client and server"
 LICENSE="SSH-OpenSSH"
 SRC_URI="https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-9.9p1.tar.gz"
+SHA256="b343fbcdbff87f15b1986e6e15d6d4fc9a7d36066be6b7fb507087ba8f966c02"
 DEPEND="system/openssl system/zlib system/libxcrypt"
 RDEPEND="system/openssl system/zlib system/libxcrypt"
 BUILD_FLAGS="--sysconfdir=/etc/ssh --with-privsep-path=/var/lib/sshd --with-default-path=/usr/bin:/usr/sbin"

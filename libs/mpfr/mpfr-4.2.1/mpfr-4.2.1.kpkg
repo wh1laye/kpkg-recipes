@@ -3,6 +3,7 @@ VERSION=4.2.1
 DESCRIPTION="Multiple precision floating point library"
 LICENSE="LGPL-3.0-or-later"
 SRC_URI="https://ftpmirror.gnu.org/gnu/mpfr/mpfr-4.2.1.tar.xz"
+SHA256="277807353a6726978996945af13e52829e3abd7a9a5b7fb2793894e18f1fcbb2"
 DEPEND="libs/gmp"
 RDEPEND="libs/gmp"
 BUILD_FLAGS="--disable-static --enable-thread-safe"

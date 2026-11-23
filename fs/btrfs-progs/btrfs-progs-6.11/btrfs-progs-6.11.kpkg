@@ -3,6 +3,7 @@ VERSION=6.11
 DESCRIPTION="Btrfs filesystem tools"
 LICENSE="GPL-2.0-only"
 SRC_URI="https://www.kernel.org/pub/linux/kernel/people/kdave/btrfs-progs/btrfs-progs-v6.11.tar.xz"
+SHA256="ff9ae91521303a90d87e1c4be230f0121f39c44ddbe52c2aeae263c6fecfa099"
 DEPEND="system/util-linux system/zlib system/xz-utils toolchain/pkgconf"
 RDEPEND="system/util-linux system/zlib system/xz-utils"
 BUILD_FLAGS="--disable-documentation --disable-python --disable-zoned --disable-backtrace"

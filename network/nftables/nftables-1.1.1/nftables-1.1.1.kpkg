@@ -3,6 +3,7 @@ VERSION=1.1.1
 DESCRIPTION="Netfilter packet filtering framework"
 LICENSE="GPL-2.0-only"
 SRC_URI="https://www.netfilter.org/projects/nftables/files/nftables-1.1.1.tar.xz"
+SHA256="6358830f3a64f31e39b0ad421d7dadcd240b72343ded48d8ef13b8faf204865a"
 DEPEND="libs/libmnl libs/libnftnl libs/gmp system/readline toolchain/pkgconf"
 RDEPEND="libs/libmnl libs/libnftnl libs/gmp system/readline"
 BUILD_FLAGS="--sysconfdir=/etc --disable-man-doc --with-cli=readline --disable-python"

@@ -3,6 +3,7 @@ VERSION=2.40.2
 DESCRIPTION="System utilities: mount, fdisk, lsblk"
 LICENSE="GPL-2.0-or-later"
 SRC_URI="https://www.kernel.org/pub/linux/utils/util-linux/v2.40/util-linux-2.40.2.tar.xz"
+SHA256="d78b37a66f5922d70edf3bdfb01a6b33d34ed3c3cafd6628203b2a2b67c8e8b3"
 DEPEND="system/ncurses system/zlib"
 RDEPEND="system/ncurses system/zlib"
 BUILD_FLAGS="--sysconfdir=/etc --disable-static --without-python --disable-chfn-chsh --disable-login --disable-nologin --disable-su --disable-runuser --disable-pylibmount --without-systemd --without-systemdsystemunitdir"

@@ -3,6 +3,7 @@ VERSION=1.5.2
 DESCRIPTION="Meson build system"
 LICENSE="Apache-2.0"
 SRC_URI="https://github.com/mesonbuild/meson/releases/download/1.5.2/meson-1.5.2.tar.gz"
+SHA256="f955e09ab0d71ef180ae85df65991d58ed8430323de7d77a37e11c9ea630910b"
 DEPEND="toolchain/python toolchain/ninja"
 RDEPEND="toolchain/python toolchain/ninja"
 

@@ -3,4 +3,5 @@ VERSION=3.1
 DESCRIPTION="Perfect hash function generator"
 LICENSE="GPL-3.0-or-later"
 SRC_URI="https://ftpmirror.gnu.org/gnu/gperf/gperf-3.1.tar.gz"
+SHA256="588546b945bba4b70b6a3a616e80b4ab466e3f33024a352fc2198112cdbb3ae2"
 RDEPEND="system/glibc"

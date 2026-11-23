@@ -3,4 +3,5 @@ VERSION=3.10
 DESCRIPTION="GNU diff tools"
 LICENSE="GPL-3.0-or-later"
 SRC_URI="https://ftpmirror.gnu.org/gnu/diffutils/diffutils-3.10.tar.xz"
+SHA256="90e5e93cc724e4ebe12ede80df1634063c7a855692685919bfe60b556c9bd09e"
 RDEPEND="system/glibc"

@@ -3,5 +3,6 @@ VERSION=5.4.7
 DESCRIPTION="XZ compression tools and library"
 LICENSE="0BSD AND GPL-2.0-or-later"
 SRC_URI="https://github.com/tukaani-project/xz/releases/download/v5.4.7/xz-5.4.7.tar.xz"
+SHA256="016182c70bb5c7c9eb3465030e3a7f6baa25e17b0e8c0afe92772e6021843ce2"
 RDEPEND="system/glibc"
 BUILD_FLAGS="--disable-static"

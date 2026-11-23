@@ -3,6 +3,7 @@ VERSION=0.54
 DESCRIPTION="Dependency based init system"
 LICENSE="BSD-2-Clause"
 SRC_URI="https://github.com/OpenRC/openrc/archive/refs/tags/0.54.tar.gz -> openrc-0.54.tar.gz"
+SHA256="c84ff1d8e468c043fe136d11d3d34d6bb28328267d1352526a5d18cdf4c60fb0"
 DEPEND="toolchain/meson toolchain/ninja toolchain/pkgconf system/ncurses"
 RDEPEND="system/ncurses"
 BUILD_FLAGS="-Dos=Linux -Dpam=false -Dsysvinit=false -Dselinux=disabled -Daudit=disabled -Dtermcap=ncurses"

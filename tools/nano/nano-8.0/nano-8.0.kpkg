@@ -3,6 +3,7 @@ VERSION=8.0
 DESCRIPTION="GNU nano editor"
 LICENSE="GPL-3.0-or-later"
 SRC_URI="https://www.nano-editor.org/dist/v8/nano-8.0.tar.xz"
+SHA256="c17f43fc0e37336b33ee50a209c701d5beb808adc2d9f089ca831b40539c9ac4"
 DEPEND="system/ncurses"
 RDEPEND="system/ncurses"
 BUILD_FLAGS="--sysconfdir=/etc --enable-utf8"

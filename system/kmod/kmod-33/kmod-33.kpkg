@@ -3,6 +3,7 @@ VERSION=33
 DESCRIPTION="Kernel module tools"
 LICENSE="LGPL-2.1-or-later AND GPL-2.0-or-later"
 SRC_URI="https://mirrors.edge.kernel.org/pub/linux/utils/kernel/kmod/kmod-33.tar.xz"
+SHA256="dc768b3155172091f56dc69430b5481f2d76ecd9ccb54ead8c2540dbcf5ea9bc"
 DEPEND="system/zlib system/xz-utils"
 RDEPEND="system/zlib system/xz-utils"
 BUILD_FLAGS="--sysconfdir=/etc --with-zlib --with-xz --without-openssl"

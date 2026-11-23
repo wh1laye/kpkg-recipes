@@ -3,6 +3,7 @@ VERSION=3.30.5
 DESCRIPTION="Cross platform build system generator"
 LICENSE="BSD-3-Clause"
 SRC_URI="https://github.com/Kitware/CMake/releases/download/v3.30.5/cmake-3.30.5.tar.gz"
+SHA256="9f55e1a40508f2f29b7e065fa08c29f82c402fa0402da839fffe64a25755a86d"
 DEPEND="system/openssl system/zlib system/ncurses"
 RDEPEND="system/openssl system/zlib system/ncurses"
 

@@ -3,6 +3,7 @@ VERSION=661
 DESCRIPTION="Terminal pager"
 LICENSE="GPL-3.0-or-later OR BSD-2-Clause"
 SRC_URI="https://www.greenwoodsoftware.com/less/less-661.tar.gz"
+SHA256="2b5f0167216e3ef0ffcb0c31c374e287eb035e4e223d5dae315c2783b6e738ed"
 DEPEND="system/ncurses"
 RDEPEND="system/ncurses"
 BUILD_FLAGS="--sysconfdir=/etc"

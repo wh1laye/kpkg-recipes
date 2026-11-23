@@ -3,5 +3,6 @@ VERSION=20240905
 DESCRIPTION="ping and network diagnostic tools"
 LICENSE="GPL-2.0-or-later AND BSD-3-Clause"
 SRC_URI="https://github.com/iputils/iputils/archive/refs/tags/20240905.tar.gz -> iputils-20240905.tar.gz"
+SHA256="055b4e6e4f298c97fd5848898099e59b4590db63fac3f7ad4fa796354ad44403"
 RDEPEND="system/glibc"
 BUILD_FLAGS="-DBUILD_MANS=false -DNO_SETCAP_OR_SUID=true -DUSE_GETTEXT=false -DUSE_IDN=false"

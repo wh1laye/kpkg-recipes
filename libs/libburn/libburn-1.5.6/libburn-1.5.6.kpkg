@@ -3,5 +3,6 @@ VERSION=1.5.6
 DESCRIPTION="Library for writing optical discs"
 LICENSE="GPL-2.0-or-later"
 SRC_URI="https://files.libburnia-project.org/releases/libburn-1.5.6.tar.gz"
+SHA256="7295491b4be5eeac5e7a3fb2067e236e2955ffdc6bbd45f546466edee321644b"
 RDEPEND="system/glibc"
 BUILD_FLAGS="--disable-static"

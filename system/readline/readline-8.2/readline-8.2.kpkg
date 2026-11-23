@@ -3,6 +3,7 @@ VERSION=8.2
 DESCRIPTION="Line editing library"
 LICENSE="GPL-3.0-or-later"
 SRC_URI="https://ftpmirror.gnu.org/gnu/readline/readline-8.2.tar.gz"
+SHA256="3feb7171f16a84ee82ca18a36d7b9be109a52c04f492a053331d7d1095007c35"
 DEPEND="system/ncurses"
 RDEPEND="system/ncurses"
 BUILD_FLAGS="--with-curses --disable-static"
