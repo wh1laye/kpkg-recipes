@@ -36,9 +36,19 @@ while IFS= read -r f; do
     fi
   fi
   for d in $(sed -n 's/^\(DEPEND\|RDEPEND\)="\(.*\)"/\2/p' "$f"); do
-    case $d in */*) ;; *) err "$rel" "dependency $d must be category/name" ;; esac
+    case $d in
+      */*) [ -n "$(find "$REPO/$d" -name '*.kpkg' 2>/dev/null | head -1)" ] || err "$rel" "dependency $d has no recipe in this tree" ;;
+      *) err "$rel" "dependency $d must be category/name" ;;
+    esac
   done
 done < <(find "$REPO" -name '*.kpkg' -not -path '*/.git/*' | sort)
+
+if [ -n "${KRYONUX_DIR:-}" ] && [ -f "$KRYONUX_DIR/tools/stage3/kryonux-packages.list" ]; then
+  while IFS= read -r p; do
+    [ -n "$p" ] || continue
+    [ -n "$(find "$REPO/$p" -name '*.kpkg' 2>/dev/null | head -1)" ] || err "stage3 list" "$p has no recipe"
+  done < "$KRYONUX_DIR/tools/stage3/kryonux-packages.list"
+fi
 
 printf '\nrecipes: %d checked, %d waiting for a checksum, %d failed\n' "$total" "$pending" "$fail"
 [ "$fail" = 0 ] || exit 1

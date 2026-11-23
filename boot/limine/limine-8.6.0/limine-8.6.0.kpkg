@@ -1,0 +1,8 @@
+PACKAGE=limine
+VERSION=8.6.0
+DESCRIPTION="Limine bootloader"
+LICENSE="BSD-2-Clause"
+SRC_URI="https://github.com/limine-bootloader/limine/releases/download/v8.6.0/limine-8.6.0.tar.xz"
+DEPEND="toolchain/nasm tools/mtools"
+RDEPEND="system/glibc"
+BUILD_FLAGS="--enable-bios --enable-uefi-x86-64 --enable-uefi-cd"

@@ -1,0 +1,8 @@
+PACKAGE=python
+VERSION=3.12.7
+DESCRIPTION="Python interpreter"
+LICENSE="PSF-2.0"
+SRC_URI="https://www.python.org/ftp/python/3.12.7/Python-3.12.7.tar.xz"
+DEPEND="system/zlib system/bzip2 system/xz-utils system/openssl"
+RDEPEND="system/zlib system/bzip2 system/xz-utils system/openssl"
+BUILD_FLAGS="--enable-shared --with-ensurepip=install"

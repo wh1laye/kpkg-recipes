@@ -1,0 +1,19 @@
+PACKAGE=minisign
+VERSION=0.11
+DESCRIPTION="Small tool to sign files and verify signatures"
+LICENSE="ISC"
+SRC_URI="https://github.com/jedisct1/minisign/archive/refs/tags/0.11.tar.gz -> minisign-0.11.tar.gz"
+DEPEND="toolchain/cmake libs/libsodium"
+RDEPEND="libs/libsodium"
+
+configure() {
+  cmake -B build -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release
+}
+
+build() {
+  cmake --build build -j"${JOBS:-$(nproc)}"
+}
+
+install() {
+  DESTDIR="$DESTDIR" cmake --install build
+}

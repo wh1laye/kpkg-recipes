@@ -1,0 +1,6 @@
+PACKAGE=nasm
+VERSION=2.16.03
+DESCRIPTION="Netwide assembler"
+LICENSE="BSD-2-Clause"
+SRC_URI="https://www.nasm.us/pub/nasm/releasebuilds/2.16.03/nasm-2.16.03.tar.xz"
+RDEPEND="system/glibc"

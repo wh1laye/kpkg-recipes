@@ -1,0 +1,11 @@
+PACKAGE=cmake
+VERSION=3.30.5
+DESCRIPTION="Cross platform build system generator"
+LICENSE="BSD-3-Clause"
+SRC_URI="https://github.com/Kitware/CMake/releases/download/v3.30.5/cmake-3.30.5.tar.gz"
+DEPEND="system/openssl system/zlib system/ncurses"
+RDEPEND="system/openssl system/zlib system/ncurses"
+
+configure() {
+  ./bootstrap --prefix=/usr --parallel="${JOBS:-$(nproc)}" --system-zlib
+}

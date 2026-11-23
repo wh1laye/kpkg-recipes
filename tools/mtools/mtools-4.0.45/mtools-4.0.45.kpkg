@@ -1,0 +1,6 @@
+PACKAGE=mtools
+VERSION=4.0.45
+DESCRIPTION="FAT filesystem tools without mounting"
+LICENSE="GPL-3.0-or-later"
+SRC_URI="https://ftp.gnu.org/gnu/mtools/mtools-4.0.45.tar.gz"
+RDEPEND="system/glibc"

@@ -1,0 +1,19 @@
+PACKAGE=meson
+VERSION=1.5.2
+DESCRIPTION="Meson build system"
+LICENSE="Apache-2.0"
+SRC_URI="https://github.com/mesonbuild/meson/releases/download/1.5.2/meson-1.5.2.tar.gz"
+DEPEND="toolchain/python toolchain/ninja"
+RDEPEND="toolchain/python toolchain/ninja"
+
+configure() {
+  true
+}
+
+build() {
+  python3 setup.py build
+}
+
+install() {
+  python3 setup.py install --root="$DESTDIR" --prefix=/usr --optimize=1 --skip-build
+}

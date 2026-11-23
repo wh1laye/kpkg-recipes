@@ -1,0 +1,22 @@
+PACKAGE=binutils
+VERSION=2.43.1
+DESCRIPTION="GNU binary utilities"
+LICENSE="GPL-3.0-or-later"
+SRC_URI="https://ftp.gnu.org/gnu/binutils/binutils-2.43.1.tar.xz"
+DEPEND="system/zlib"
+RDEPEND="system/zlib"
+
+configure() {
+  mkdir -p build
+  cd build
+  ../configure --prefix=/usr --sysconfdir=/etc --enable-ld=default --enable-plugins --enable-shared --disable-werror --enable-64-bit-bfd --enable-new-dtags --enable-default-hash-style=gnu --with-system-zlib
+}
+
+build() {
+  make -C build tooldir=/usr -j"${JOBS:-$(nproc)}"
+}
+
+install() {
+  make -C build DESTDIR="$DESTDIR" tooldir=/usr install
+  find "$DESTDIR/usr/lib" -maxdepth 1 \( -name 'libbfd.a' -o -name 'libctf*.a' -o -name 'libopcodes.a' -o -name 'libsframe.a' \) -delete
+}

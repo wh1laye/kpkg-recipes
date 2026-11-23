@@ -1,0 +1,29 @@
+PACKAGE=glibc
+VERSION=2.40
+DESCRIPTION="GNU C library"
+LICENSE="LGPL-2.1-or-later"
+SRC_URI="https://ftp.gnu.org/gnu/glibc/glibc-2.40.tar.xz"
+DEPEND="system/linux-headers"
+
+configure() {
+  mkdir -p build
+  cd build
+  echo "rootsbindir=/usr/sbin" > configparms
+  ../configure --prefix=/usr --disable-werror --enable-kernel=5.4 --enable-stack-protector=strong --disable-nscd libc_cv_slibdir=/usr/lib
+}
+
+build() {
+  make -C build -j"${JOBS:-$(nproc)}"
+}
+
+install() {
+  make -C build DESTDIR="$DESTDIR" install
+  sed '/RTLDLIST=/s@/usr@@g' -i "$DESTDIR/usr/bin/ldd"
+  mkdir -p "$DESTDIR/etc/ld.so.conf.d"
+  printf 'include /etc/ld.so.conf.d/*.conf\n/usr/local/lib\n' > "$DESTDIR/etc/ld.so.conf"
+  printf 'passwd: files\ngroup: files\nshadow: files\nhosts: files dns\nnetworks: files\nprotocols: files\nservices: files\nethers: files\nrpc: files\n' > "$DESTDIR/etc/nsswitch.conf"
+}
+
+post_install() {
+  ldconfig
+}

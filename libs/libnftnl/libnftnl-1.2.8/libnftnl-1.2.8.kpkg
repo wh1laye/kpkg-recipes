@@ -1,0 +1,7 @@
+PACKAGE=libnftnl
+VERSION=1.2.8
+DESCRIPTION="Netfilter nftables netlink library"
+LICENSE="GPL-2.0-or-later"
+SRC_URI="https://www.netfilter.org/projects/libnftnl/files/libnftnl-1.2.8.tar.xz"
+DEPEND="libs/libmnl toolchain/pkgconf"
+RDEPEND="libs/libmnl"

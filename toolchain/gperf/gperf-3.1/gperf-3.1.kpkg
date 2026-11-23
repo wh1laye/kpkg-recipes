@@ -1,0 +1,6 @@
+PACKAGE=gperf
+VERSION=3.1
+DESCRIPTION="Perfect hash function generator"
+LICENSE="GPL-3.0-or-later"
+SRC_URI="https://ftp.gnu.org/gnu/gperf/gperf-3.1.tar.gz"
+RDEPEND="system/glibc"

@@ -1,0 +1,8 @@
+PACKAGE=eudev
+VERSION=3.2.14
+DESCRIPTION="Device manager"
+LICENSE="GPL-2.0-or-later"
+SRC_URI="https://github.com/eudev-project/eudev/releases/download/v3.2.14/eudev-3.2.14.tar.gz"
+DEPEND="system/kmod system/util-linux toolchain/gperf"
+RDEPEND="system/kmod system/util-linux"
+BUILD_FLAGS="--sysconfdir=/etc --disable-manpages --disable-static --enable-kmod --with-rootlibdir=/usr/lib --with-rootprefix=/usr"

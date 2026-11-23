@@ -1,0 +1,18 @@
+PACKAGE=doas
+VERSION=6.8.2
+DESCRIPTION="Minimal privilege escalation tool"
+LICENSE="ISC"
+SRC_URI="https://github.com/Duncaen/OpenDoas/releases/download/v6.8.2/opendoas-6.8.2.tar.gz"
+DEPEND="toolchain/bison"
+RDEPEND="system/glibc"
+
+configure() {
+  ./configure --prefix=/usr --sysconfdir=/etc --without-pam --with-timestamp
+}
+
+install() {
+  make DESTDIR="$DESTDIR" install
+  install -d "$DESTDIR/etc"
+  printf 'permit persist :wheel\n' > "$DESTDIR/etc/doas.conf"
+  chmod 0400 "$DESTDIR/etc/doas.conf"
+}

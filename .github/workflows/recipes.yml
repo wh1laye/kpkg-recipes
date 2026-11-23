@@ -17,4 +17,4 @@ jobs:
       - name: Test kpkg
         run: bash kryonux/tools/test-kpkg.sh kryonux/kpkg
       - name: Check recipes
-        run: KPKG="$PWD/kryonux/kpkg/kpkg" bash tools/test-recipes.sh
+        run: KRYONUX_DIR="$PWD/kryonux" KPKG="$PWD/kryonux/kpkg/kpkg" bash tools/test-recipes.sh
