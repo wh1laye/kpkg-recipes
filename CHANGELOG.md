@@ -6,6 +6,7 @@ All notable changes to the Kryonux recipe tree are recorded here.
 
 ### 🍳 Recipes
 #### Fixed
+- The `recipes` workflow failed with `kpkg is not available`: `test-kpkg.sh` runs `make clean` and removed the built `kpkg`, so the workflow now builds `kpkg` after the kpkg tests
 - The fill-checksums run timed out on `ftp.gnu.org`. GNU sources now use `ftpmirror.gnu.org`, and `kpkg` retries GNU downloads from other mirrors. The workflow now commits the checksums it did write even when some downloads fail
 - The recipes workflow ran the kpkg tests without root, so one test failed; it now uses `sudo`
 
