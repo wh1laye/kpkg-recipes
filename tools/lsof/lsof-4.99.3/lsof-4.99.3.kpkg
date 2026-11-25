@@ -1,0 +1,8 @@
+PACKAGE=lsof
+VERSION=4.99.3
+DESCRIPTION="List open files"
+HOMEPAGE="https://github.com/lsof-org/lsof"
+LICENSE="Zlib"
+SRC_URI="https://github.com/lsof-org/lsof/releases/download/4.99.3/lsof-4.99.3.tar.gz"
+DEPEND="toolchain/gcc toolchain/make"
+RDEPEND="system/glibc"

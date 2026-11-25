@@ -47,7 +47,7 @@ if [ -e "$REPO/.gitmodules" ]; then err ".gitmodules" "a leftover from the old r
 for old in $(grep -rIil -E 'cloud(pkg|os)' "$REPO" --exclude-dir=.git --exclude-dir=kryonux --exclude=CHANGELOG.md --exclude=test-recipes.sh 2>/dev/null || true); do err "${old#"$REPO"/}" "contains an old CloudPkg or CloudOS name, remove the file or rename it"; done
 for wf in "$REPO"/.github/workflows/*.yml; do
   [ -f "$wf" ] || continue
-  case $(basename "$wf") in recipes.yml|fill-checksums.yml) ;; *) err "${wf#"$REPO"/}" "unknown workflow, only recipes.yml and fill-checksums.yml belong here" ;; esac
+  case $(basename "$wf") in recipes.yml|fill-checksums.yml|release.yml) ;; *) err "${wf#"$REPO"/}" "unknown workflow, only recipes.yml, fill-checksums.yml and release.yml belong here" ;; esac
 done
 
 if [ -n "${KRYONUX_DIR:-}" ] && [ -f "$KRYONUX_DIR/tools/stage3/kryonux-packages.list" ]; then
@@ -56,6 +56,13 @@ if [ -n "${KRYONUX_DIR:-}" ] && [ -f "$KRYONUX_DIR/tools/stage3/kryonux-packages
     [ -n "$(find "$REPO/$p" -name '*.kpkg' 2>/dev/null | head -1)" ] || err "stage3 list" "$p has no recipe"
   done < "$KRYONUX_DIR/tools/stage3/kryonux-packages.list"
 fi
+
+if [ -n "${KRYONUX_DIR:-}" ] || command -v "$KPKG" >/dev/null 2>&1 || [ -x "$KPKG" ]; then
+  if tree_out=$("$KPKG" check "$REPO" 2>&1); then :; else
+    printf '%s\n' "$tree_out" | grep -v 'SHA256 is missing' | grep '^kpkg: /\|unknown category\|has no recipe' | while IFS= read -r l; do printf 'FAIL  tree: %s\n' "$l"; done
+  fi
+fi
+if [ -f "$REPO/tools/fastfetch/fastfetch-2.70.0/files/config.jsonc" ] && [ -n "${KRYONUX_DIR:-}" ] && ! cmp -s "$REPO/tools/fastfetch/fastfetch-2.70.0/files/config.jsonc" "$KRYONUX_DIR/tools/stage3/fastfetch.jsonc"; then err "tools/fastfetch" "files/config.jsonc differs from tools/stage3/fastfetch.jsonc"; fi
 
 printf '\nrecipes: %d checked, %d waiting for a checksum, %d failed\n' "$total" "$pending" "$fail"
 [ "$fail" = 0 ] || exit 1

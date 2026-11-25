@@ -43,7 +43,7 @@ All functions are optional. `kpkg` supplies defaults: `./configure --prefix=/usr
 | `pre_install`, `post_install` | Before and after files reach the system |
 | `pre_remove`, `post_remove` | Before and after removal |
 
-Available variables: `DESTDIR`, `JOBS`, `BUILD_FLAGS`. The old names `src_prepare`, `src_configure`, `src_compile`, `src_install`, `pkg_preinst`, `pkg_postinst`, `pkg_prerm` and `pkg_postrm` are accepted but should not be used in new recipes.
+Available variables: `DESTDIR`, `JOBS`, `BUILD_FLAGS`, `FILESDIR` (the `files/` directory next to the recipe), and `CFLAGS`, `CXXFLAGS`, `LDFLAGS` when set in `/etc/kpkg/config.kpkg`. The old names `src_prepare`, `src_configure`, `src_compile`, `src_install`, `pkg_preinst`, `pkg_postinst`, `pkg_prerm` and `pkg_postrm` are accepted but should not be used in new recipes.
 
 ## 📚 Reference recipes
 
@@ -69,3 +69,7 @@ Always hash the exact file the `SRC_URI` downloads, after any rename.
 3. Run `kpkg checksum` and `kpkg lint` on the file and fix every message; then run `KPKG=kpkg bash tools/test-recipes.sh`
 4. Run `doas kpkg install ./path/to/name-version.kpkg` on a Kryonux system and confirm it builds
 5. Add a line to `CHANGELOG.md`
+
+## 🔒 Verification
+
+A source without a matching `SHA256` is never built. `SRC_URI` must use `https`. Unknown header fields are errors. Run `kpkg check .` to lint the whole tree.

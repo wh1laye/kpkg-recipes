@@ -1,0 +1,20 @@
+PACKAGE=pciutils
+VERSION=3.13.0
+DESCRIPTION="PCI bus inspection tools"
+HOMEPAGE="https://mj.ucw.cz/sw/pciutils/"
+LICENSE="GPL-2.0-or-later"
+SRC_URI="https://www.kernel.org/pub/software/utils/pciutils/pciutils-3.13.0.tar.xz"
+DEPEND="toolchain/gcc toolchain/make"
+RDEPEND="system/glibc"
+
+configure() {
+  true
+}
+
+build() {
+  make PREFIX=/usr SHARED=no ZLIB=no DNS=no -j"${JOBS:-$(nproc)}"
+}
+
+install() {
+  make PREFIX=/usr SHARED=no ZLIB=no DNS=no DESTDIR="$DESTDIR" install
+}

@@ -1,0 +1,36 @@
+name: release
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install minisign
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq minisign
+      - name: Pack and sign
+        env:
+          MINISIGN_KEY: ${{ secrets.MINISIGN_KEY }}
+          MINISIGN_PASSWORD: ${{ secrets.MINISIGN_PASSWORD }}
+        run: |
+          [ -n "$MINISIGN_KEY" ] || { echo "::error::MINISIGN_KEY is not set"; exit 1; }
+          mkdir -p out
+          tar --exclude=.git --exclude=out --transform 's,^\.,kpkg-recipes,' -czf out/kpkg-recipes.tar.gz .
+          K=$(mktemp)
+          printf '%s\n' "$MINISIGN_KEY" | tr -d '\r' > "$K"
+          if [ -n "$MINISIGN_PASSWORD" ]; then
+            printf '%s\n' "$MINISIGN_PASSWORD" | minisign -S -s "$K" -m out/kpkg-recipes.tar.gz -x out/kpkg-recipes.tar.gz.minisig >/dev/null
+          else
+            minisign -S -W -s "$K" -m out/kpkg-recipes.tar.gz -x out/kpkg-recipes.tar.gz.minisig >/dev/null
+          fi
+          rm -f "$K"
+      - name: Publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view recipes-latest >/dev/null 2>&1 || gh release create recipes-latest --title "recipes-latest" --notes "Signed recipe tree used by kpkg sync"
+          gh release upload recipes-latest out/kpkg-recipes.tar.gz out/kpkg-recipes.tar.gz.minisig --clobber

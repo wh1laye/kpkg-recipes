@@ -1,0 +1,8 @@
+PACKAGE=htop
+VERSION=3.3.0
+DESCRIPTION="Interactive process viewer"
+HOMEPAGE="https://htop.dev/"
+LICENSE="GPL-2.0-or-later"
+SRC_URI="https://github.com/htop-dev/htop/releases/download/3.3.0/htop-3.3.0.tar.xz"
+DEPEND="toolchain/gcc toolchain/make system/ncurses"
+RDEPEND="system/glibc system/ncurses"

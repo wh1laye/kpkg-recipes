@@ -1,0 +1,20 @@
+PACKAGE=libcap
+VERSION=2.70
+DESCRIPTION="POSIX capabilities library and tools"
+HOMEPAGE="https://sites.google.com/site/fullycapable/"
+LICENSE="BSD-3-Clause OR GPL-2.0-only"
+SRC_URI="https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-2.70.tar.xz"
+DEPEND="toolchain/gcc toolchain/make"
+RDEPEND="system/glibc"
+
+configure() {
+  true
+}
+
+build() {
+  make prefix=/usr lib=lib -j"${JOBS:-$(nproc)}"
+}
+
+install() {
+  make prefix=/usr lib=lib DESTDIR="$DESTDIR" install
+}

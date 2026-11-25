@@ -19,8 +19,10 @@ build() {
 
 install() {
   DESTDIR="$DESTDIR" cmake --install build
+  install -Dm644 "$FILESDIR/config.jsonc" "$DESTDIR/etc/xdg/fastfetch/config.jsonc"
 }
 
 post_install() {
-  echo "fastfetch installed, configuration: /etc/xdg/fastfetch/config.jsonc"
+  echo "fastfetch installed with the Kryonux K logo, configuration: /etc/xdg/fastfetch/config.jsonc"
+  echo "lock it against changes with: kpkg hold fastfetch"
 }
