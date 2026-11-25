@@ -5,7 +5,12 @@ All notable changes to the Kryonux recipe tree are recorded here.
 ## [v0.0.1] - 2026-11-25
 
 ### 🍳 Recipes
+#### Changed
+- The README shows only the number of recipes instead of listing them, and `test-recipes.sh` checks that the number is correct
+- `release.yml` uses a pinned `actions/checkout`, checks the signing key, signs with or without a password and verifies the signature against `kpkg-recipes.pub` before publishing
+
 #### Added
+- `kpkg-recipes.pub`: the public key of the recipe tree, separate from the Kryonux release key
 - `tools/fastfetch` installs the Kryonux K logo configuration from `files/config.jsonc`
 - Recipes for `libs/libcap`, `system/kbd`, `tools/htop`, `tools/rsync`, `tools/pciutils` and `tools/lsof`; their `SHA256` is filled by the fill-checksums workflow
 - `release.yml` publishes the signed `kpkg-recipes.tar.gz` that `kpkg sync` downloads

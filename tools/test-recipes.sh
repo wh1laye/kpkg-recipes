@@ -64,5 +64,10 @@ if [ -n "${KRYONUX_DIR:-}" ] || command -v "$KPKG" >/dev/null 2>&1 || [ -x "$KPK
 fi
 if [ -f "$REPO/tools/fastfetch/fastfetch-2.70.0/files/config.jsonc" ] && [ -n "${KRYONUX_DIR:-}" ] && ! cmp -s "$REPO/tools/fastfetch/fastfetch-2.70.0/files/config.jsonc" "$KRYONUX_DIR/tools/stage3/fastfetch.jsonc"; then err "tools/fastfetch" "files/config.jsonc differs from tools/stage3/fastfetch.jsonc"; fi
 
+if [ -f "$REPO/README.md" ]; then
+  shown=$(grep -o 'holds \*\*[0-9]* recipes' "$REPO/README.md" | grep -o '[0-9]*' | head -1 || true)
+  [ "${shown:-}" = "$total" ] || err "README.md" "recipe count is ${shown:-missing}, the tree has $total"
+fi
+
 printf '\nrecipes: %d checked, %d waiting for a checksum, %d failed\n' "$total" "$pending" "$fail"
 [ "$fail" = 0 ] || exit 1
