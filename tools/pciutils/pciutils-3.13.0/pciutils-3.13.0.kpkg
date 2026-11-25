@@ -4,6 +4,7 @@ DESCRIPTION="PCI bus inspection tools"
 HOMEPAGE="https://mj.ucw.cz/sw/pciutils/"
 LICENSE="GPL-2.0-or-later"
 SRC_URI="https://www.kernel.org/pub/software/utils/pciutils/pciutils-3.13.0.tar.xz"
+SHA256="77f11f78298502634d1af50308f15a5788629f6cf45cba376f5009aea4cb4926"
 DEPEND="toolchain/gcc toolchain/make"
 RDEPEND="system/glibc"
 

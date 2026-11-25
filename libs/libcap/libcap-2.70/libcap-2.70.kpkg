@@ -4,6 +4,7 @@ DESCRIPTION="POSIX capabilities library and tools"
 HOMEPAGE="https://sites.google.com/site/fullycapable/"
 LICENSE="BSD-3-Clause OR GPL-2.0-only"
 SRC_URI="https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-2.70.tar.xz"
+SHA256="23a6ef8aadaf1e3e875f633bb2d116cfef8952dba7bc7c569b13458e1952b30f"
 DEPEND="toolchain/gcc toolchain/make"
 RDEPEND="system/glibc"
 
